@@ -1,0 +1,5 @@
+{
+    "clangd.arguments": [
+        "-I=./Include"
+    ]
+}
