@@ -11,9 +11,7 @@
 #include "TimeManager.h"
 #include "ViewManager.h"
 #include "MainMenu.h"
-#include "Leaderboard.h"
-#include "Settings.h"
-#include "Game.h"
+#include "Graphic.h"
 
 int main(int argc, char* argv[]) {
 
@@ -28,17 +26,13 @@ int main(int argc, char* argv[]) {
     ViewManager viewManager = ViewManager();
 
     MainMenu mainMenu = MainMenu(&resources, display.getSize());
-    Leaderboard leaderboard = Leaderboard(resources.ttf, display.getSize());
-    Settings settings = Settings(display.getSize());
-    Game game = Game(display.getSize());
+    Graphic graphic = Graphic(display.getSize());
     
     viewManager.addView("mainmenu", &mainMenu);
-    viewManager.addView("leaderboard", &leaderboard);
-    viewManager.addView("settings", &settings);
-    viewManager.addView("game", &game);
+    viewManager.addView("graphic", &graphic);
     viewManager.setCurrentView("mainmenu");
 
-    // Game loop
+    // graphic loop
     bool running = true;
     while(running){
         time.updateStart();
