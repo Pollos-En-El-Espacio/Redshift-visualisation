@@ -20,11 +20,13 @@ std::string Graphic::update(DisplayManager* display, double dt){
     display->setBg(Colour(0, 16, 35, 255));
     //display->setBg(Colour(76,86,106,255));
 
-    float freq = 0.05;
-    float timeDilationFactor = 0.5;         
+    double freq = 0.04;
+    double timeDilationFactor = 0.9998104359;         
+    double timeDilationFactorMultiplied = timeDilationFactor*0.65;
 
     sineWave.drawWave(display, dt, waveHeight, waveWidth, freq, wavePos, waveColour, waveWidth);
     sineWave.drawWave(display, dt, waveHeight, waveWidth, freq*timeDilationFactor, {wavePos.x,static_cast<int>(wavePos.y+waveHeight*1.5)}, waveColour, waveWidth/timeDilationFactor);
+    sineWave.drawWave(display, dt, waveHeight, waveWidth, freq*timeDilationFactorMultiplied, {wavePos.x,static_cast<int>(wavePos.y+waveHeight*2.5)}, waveColour, waveWidth/timeDilationFactorMultiplied);
 
     if (display->inputs->isPressed(SDL_SCANCODE_ESCAPE)){
         changeView = "mainmenu";
