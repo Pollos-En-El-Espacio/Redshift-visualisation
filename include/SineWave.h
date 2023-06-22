@@ -9,7 +9,8 @@
 class SineWave{
     public:
     SineWave();
-    void drawWave(DisplayManager* display, double dt, const int height, const int width, const double freq, const Point& pos, const Colour& colour);
+    Colour interpolateColours(const Colour& startColour, const Colour& endColour, double ratio);
+    void drawWave(DisplayManager* display, double dt, const int height, const int width, const double freq, const Point& pos, const Colour& colour, int waveEnd);
 };
 
 #endif

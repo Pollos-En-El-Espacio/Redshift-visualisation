@@ -39,7 +39,7 @@ std::string MainMenu::update(DisplayManager* display, double dt){
     display->setBg(Colour(46, 52, 73, 255));
     backgroundShapes.update(display, dt);
     updateButtons(display, dt);
-display->render(resources->ttf->getText("main_title"), Point(200,75));
+    display->render(resources->ttf->getText("main_title"), Point(200,75));
 
     return changeView;
 }
