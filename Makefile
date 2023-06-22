@@ -1,6 +1,6 @@
 CC=g++
 INCLUDE_DIR := $(shell pwd)/include
-BIN_DIR := $(shell pwd)/bin
+BIN_DIR := $(shell pwd)/bin/linux
 OBJ_DIR := $(shell pwd)/obj
 SRC := $(shell pwd)/src
 CFLAGS := -std=c++20 -m64 -g -Wall

@@ -9,7 +9,7 @@
 #include "Graphic.h"
 
 Graphic::Graphic(ResourceManager* presources, const Point& screenSize):       
-    changeView(""),resources(presources),sineWave(),waveHeight(100),waveWidth(1000),wavePos(Point(100,200)),waveColour(Colour(216,222,233,255)){
+    changeView(""),resources(presources),sineWave(),waveHeight(100),waveWidth(1000),wavePos(Point(100,285)),waveColour(Colour(216,222,233,255)){
         resources->ttf->loadFont("Little Orion", "./res/fonts/Little Orion.ttf", 64);
         resources->ttf->loadTextWrapped("graphic_title", "Little Orion", "Data wave experiences gravitational redshift due to time dilation", Colour(94,129,172,255),1000);
 
