@@ -10,6 +10,7 @@
 
 class Graphic : public View{
     std::string changeView;
+    ResourceManager* resources;
     SineWave sineWave;
     int waveHeight;
     int waveWidth;
@@ -19,7 +20,7 @@ class Graphic : public View{
     void updateButtons(DisplayManager* display, double dt);
 
     public:
-    Graphic(const Point& screenSize);
+    Graphic(ResourceManager* presources, const Point& screenSize);
     std::string update(DisplayManager* display, double dt);
 };
 

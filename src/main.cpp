@@ -26,7 +26,7 @@ int main(int argc, char* argv[]) {
     ViewManager viewManager = ViewManager();
 
     MainMenu mainMenu = MainMenu(&resources, display.getSize());
-    Graphic graphic = Graphic(display.getSize());
+    Graphic graphic = Graphic(&resources, display.getSize());
     
     viewManager.addView("mainmenu", &mainMenu);
     viewManager.addView("graphic", &graphic);
