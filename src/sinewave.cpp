@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include <cmath>
-#include "Utils.h"
-#include "DisplayManager.h"
+#include "engine/Utils.h"
+#include "engine/DisplayManager.h"
 #include "SineWave.h"
 
 SineWave::SineWave(){}  

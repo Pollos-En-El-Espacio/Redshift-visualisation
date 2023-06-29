@@ -1,22 +1,26 @@
-CC=g++
-INCLUDE_DIR := $(shell pwd)/include
-BIN_DIR := $(shell pwd)/bin/linux
-OBJ_DIR := $(shell pwd)/obj
-SRC := $(shell pwd)/src
+CC = g++
+INCLUDE_DIR := include
+BIN_DIR := bin/linux
+SRC_DIR := src
+OBJ_DIR := obj
+
+SOURCES := $(shell find $(SRC_DIR) -type f -name '*.cpp')
+OBJECTS := $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(SOURCES))
+
 CFLAGS := -std=c++20 -m64 -g -Wall
 LFLAGS := -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_gfx
-OBJECTS = objdir compilesrc
 
-all: $(OBJECTS)
-	$(CC) $(OBJ_DIR)/*.o -o $(BIN_DIR)/main $(LFLAGS)
-	rm -r $(OBJ_DIR)
+.PHONY: all clean
 
-objdir:
-	mkdir -p $(OBJ_DIR)
+all: $(BIN_DIR)/main
 
-compilesrc:
-	$(CC) -c $(SRC)/*.cpp $(CFLAGS) -I$(INCLUDE_DIR) 
-	mv $(shell pwd)/*.o $(OBJ_DIR)
+$(BIN_DIR)/main: $(OBJECTS)
+	$(CC) $^ -o $@ $(LFLAGS)
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
+	@mkdir -p $(@D)
+	$(CC) -c $< -o $@ $(CFLAGS) -I$(INCLUDE_DIR)
 
 clean:
-	rm -r $(shell pwd)/obj
+	rm -rf $(BIN_DIR)/*
+	rm -rf $(OBJ_DIR)/*

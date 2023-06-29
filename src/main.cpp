@@ -3,15 +3,15 @@
 #include <string>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
-#include "Utils.h"
-#include "WindowManager.h"
-#include "DisplayManager.h"
-#include "ResourceManager.h"
-#include "AnimationHandler.h"
-#include "TimeManager.h"
-#include "ViewManager.h"
-#include "MainMenu.h"
-#include "Graphic.h"
+#include "engine/Utils.h"
+#include "engine/WindowManager.h"
+#include "engine/DisplayManager.h"
+#include "engine/ResourceManager.h"
+#include "engine/AnimationHandler.h"
+#include "engine/TimeManager.h"
+#include "engine/ViewManager.h"
+#include "mainmenu/MainMenu.h"
+#include "graphic/Graphic.h"
 
 int main(int argc, char* argv[]) {
 
